@@ -70,6 +70,33 @@
   </div>
 </div>
 
+<div class="section-title">総評 — この6ヶ月で何が起きたか</div>
+<div class="grid grid-1">
+  <div class="card" style="border-left:4px solid #58a6ff;">
+    <h2 style="font-size:15px;">1.3 PR/日 × 6ヶ月 = 従来開発の 10〜50倍の速度</h2>
+    <div style="font-size:13px;color:#c9d1d9;line-height:1.75;">
+      中央値サイクルタイム <strong style="color:#58a6ff;">0.5時間</strong>、設計→実装完了 <strong style="color:#58a6ff;">2.1時間</strong>（92%当日）。
+      従来の人手開発（中央値1〜3日、月5〜20 PR）と比べて桁違いの速度。
+      しかも品質低下の痕跡（revert 連鎖、hotfix 爆発、review 差戻しループ）が最小限——
+      <strong>「AI を使って2倍」ではなく、「AI を前提に開発プロセスそのものを再設計した」</strong> 結果と読める。
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;">
+      <div class="insight" style="border-left-color:#3fb950;">
+        <strong>🚀 量産フェーズ</strong><br>
+        12〜1月に機能実装がピーク。ログ機能・管理画面など業務機能が短期で揃った時期。
+      </div>
+      <div class="insight" style="border-left-color:#f0c142;">
+        <strong>🔧 メタ投資フェーズ</strong><br>
+        2月に OpenSpec 移行・CI・docs など「プロセス自体」へ3割超を投資。量産で止まらず仕組みに戻っている。
+      </div>
+      <div class="insight" style="border-left-color:#bc8cff;">
+        <strong>🎯 品質フェーズ</strong><br>
+        4月は Sentry・Docker・deps など品質基盤の再整備が増加。リファクタ比率も月を追って上昇傾向。
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="section-title">フェーズ別タイムライン</div>
 <div class="phase-timeline">
   <div class="phase-row" style="border-color:#f78166;"><div class="phase-name" style="color:#f78166;">Phase 1</div><div class="phase-period">2025-11</div><div class="phase-theme">基盤構築 — 認証・API統合・テスト基盤・初期CRUD</div><div class="phase-bar-wrap"><div class="phase-bar" style="width:35%;background:#f78166;"></div></div><div class="phase-count">24</div></div>
@@ -79,12 +106,20 @@
   <div class="phase-row" style="border-color:#58a6ff;"><div class="phase-name" style="color:#58a6ff;">Phase 5</div><div class="phase-period">2026-02 前半</div><div class="phase-theme">開発プロセス刷新 — SDD(OpenSpec) 導入・スキーマ管理機能</div><div class="phase-bar-wrap"><div class="phase-bar" style="width:77%;background:#58a6ff;"></div></div><div class="phase-count">57</div></div>
   <div class="phase-row" style="border-color:#bc8cff;"><div class="phase-name" style="color:#bc8cff;">Phase 6</div><div class="phase-period">2026-02 後半〜04</div><div class="phase-theme">スキーマ管理高度化 — 比較機能・業務フラグ・品質改善</div><div class="phase-bar-wrap"><div class="phase-bar" style="width:72%;background:#bc8cff;"></div></div><div class="phase-count">~55</div></div>
 </div>
+<div style="padding:12px 32px 0;">
+  <div class="insight">
+    <strong>AI-native 組織の成熟カーブ</strong> — 基盤構築（Ph1）→ インフラ爆発でfix率最高（Ph2）→ 業務機能の高速量産（Ph3-4）→ <strong style="color:#58a6ff;">プロセス・ルール・AIツール自体へのメタ投資（Ph5）</strong> → 高度化・品質フェーズ（Ph6）。多くのチームが量産段階（Ph3-4）で止まる中、「仕組みに戻って強化する」判断ができているのが特徴。これが後続の高速化を支えている構造。
+  </div>
+</div>
 
 <div class="section-title">週次 PR 数（並列性・バースト）</div>
 <div class="grid grid-1">
   <div class="card">
     <h2>週次マージ PR 数 <span class="badge">ISOweek単位</span></h2>
     <canvas id="weeklyChart" style="max-height:240px;"></canvas>
+    <div class="insight" style="margin-top:12px;">
+      <strong>バースト型の開発リズム</strong> — 週25本（W50）、22本（W07）、20本（W51, W09）のピークが散在。1日で10〜19 PR 生成される「バースト開発日」が計18日あり、AI 実装を前提にした並列開発が機能している。W03 / W10 など谷の週は休暇や大型機能の集中設計期間に相当。
+    </div>
   </div>
 </div>
 
@@ -116,7 +151,7 @@
     <h2>月別 PR サイクルタイム <span class="badge">平均 vs 中央値 (h)</span></h2>
     <canvas id="leadTimeChart" style="max-height:240px;"></canvas>
     <div class="insight" style="margin-top:12px;">
-      <strong>中央値は常に 0.4〜1.2h</strong> — 半数以上は1時間以内にマージ。平均を引き上げているのは feat PR（平均 6.7h）のみ。
+      <strong>中央値は常に 0.4〜1.2h</strong> — 半数以上は1時間以内にマージ。平均を引き上げているのは feat PR（平均 6.7h）のみ。3月以降に平均が 3.6h → 4.4h と上昇傾向があり、扱う機能の複雑度が上がっている兆候、または外部レビュアーが関わり始めた影響として継続観測が必要。
     </div>
   </div>
 </div>
@@ -130,6 +165,29 @@
       <div class="insight"><strong>中央値 2.1h</strong><br>設計から実装完了まで2時間前後。AIが実装を担うため人的ボトルネックがない。</div>
       <div class="insight"><strong>92% が当日完了</strong><br>14件中13件は8時間以内にarchive。設計→実装→PRマージが1セッションで完結。</div>
       <div class="insight"><strong>唯一の翌日以降: 83.8h</strong><br>master-versioning-1（3/1→3/4）はDBスキーマ変更を含む複雑機能で、複数日にまたがって実装された唯一のケース。</div>
+    </div>
+    <div class="insight" style="margin-top:12px;border-left-color:#3fb950;">
+      <strong>設計品質が実装に耐える詳細度で書かれている証拠</strong> — 設計が曖昧だと手戻りで archive が伸びるが、2.1h で閉じられているのは AI が書く proposal / tasks / design ドキュメントが十分機能していることを示す。唯一の例外（83.8h）は JSONB スナップショットのような新データモデル設計を伴うケースで、<strong>「複雑度の閾値」</strong>が存在することも可視化されている。
+    </div>
+  </div>
+</div>
+
+<div class="section-title">懸念・今後の観測ポイント</div>
+<div class="grid grid-2">
+  <div class="card" style="border-left:3px solid #f78166;">
+    <h2>🚨 懸念シグナル</h2>
+    <div style="font-size:12px;color:#c9d1d9;line-height:1.9;">
+      <div style="margin-bottom:10px;"><strong>Bus factor = 1</strong><br><span style="color:#8b949e;">ほぼ全 PR が1人で完結。AIが補完しているとはいえ、ナレッジの人への定着は別論点。</span></div>
+      <div style="margin-bottom:10px;"><strong>特定スコープへの集中</strong><br><span style="color:#8b949e;">schema-mgmt 系が全体の17%。特定ドメインに作業が偏りすぎると、他領域との整合性が長期的に歪む恐れ。</span></div>
+      <div><strong>サイクルタイム平均の上昇</strong><br><span style="color:#8b949e;">3月 3.6h → 4月 4.4h。複雑度 or 外部レビュー導入の影響。トレンドとして監視価値あり。</span></div>
+    </div>
+  </div>
+  <div class="card" style="border-left:3px solid #3fb950;">
+    <h2>✨ 注目すべき良い兆候</h2>
+    <div style="font-size:12px;color:#c9d1d9;line-height:1.9;">
+      <div style="margin-bottom:10px;"><strong>1月に refactor が最多</strong><br><span style="color:#8b949e;">個人開発だと「動いているコードは触らない」バイアスが働くが、負債を溜めずに清算するサイクルが成立している。AI がコスト意識を下げた効果。</span></div>
+      <div style="margin-bottom:10px;"><strong>ドキュメント PR が即マージ</strong><br><span style="color:#8b949e;">17/20件が30分以内。CI が通れば即反映する信頼ベースのフロー＝自動化への投資回収期。</span></div>
+      <div><strong>再現可能な開発プロセス</strong><br><span style="color:#8b949e;">OpenSpec + skills 整備により、単なる速度改善ではなく「同じ速度で動き続けられる仕組み」を構築中。</span></div>
     </div>
   </div>
 </div>
