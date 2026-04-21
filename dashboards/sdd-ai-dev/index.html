@@ -140,7 +140,16 @@
 <div class="section-title">週次 PR 数（並列性・バースト）</div>
 <div class="grid grid-1">
   <div class="card">
-    <h2>週次マージ PR 数 <span class="badge">ISOweek単位</span></h2>
+    <h2>
+      週次マージ PR 数
+      <span class="badge" title="ISO 8601 規格の週番号。週の始まりは月曜、第1週はその年最初の木曜を含む週。">ISO week</span>
+      <span style="display:inline-flex;gap:10px;margin-left:auto;font-size:11px;color:#8b949e;font-weight:400;align-items:center;">
+        <span><span style="display:inline-block;width:10px;height:10px;background:#3fb950;border-radius:2px;margin-right:4px;vertical-align:middle;"></span>&lt;10 通常</span>
+        <span><span style="display:inline-block;width:10px;height:10px;background:#58a6ff;border-radius:2px;margin-right:4px;vertical-align:middle;"></span>10–14 標準</span>
+        <span><span style="display:inline-block;width:10px;height:10px;background:#ff8c42;border-radius:2px;margin-right:4px;vertical-align:middle;"></span>15–19 高密度</span>
+        <span><span style="display:inline-block;width:10px;height:10px;background:#f78166;border-radius:2px;margin-right:4px;vertical-align:middle;"></span>≥20 バースト</span>
+      </span>
+    </h2>
     <canvas id="weeklyChart" style="max-height:240px;"></canvas>
     <div class="insight" style="margin-top:12px;">
       <strong>バースト型の開発リズム</strong> — 週25本（W50）、22本（W07）、20本（W51, W09）のピークが散在。1日で10〜19 PR をまとめてマージする「バースト日」が複数観測され、AI 実装を前提にした並列開発が機能している。W03 / W10 など谷の週は休暇や大型機能の集中設計期間に相当。
