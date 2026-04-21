@@ -70,28 +70,49 @@
   </div>
 </div>
 
-<div class="section-title">総評 — この6ヶ月で何が起きたか</div>
+<div class="section-title">プロジェクトが目指したもの（README より）</div>
+<div class="grid grid-1">
+  <div class="card" style="border-left:4px solid #3fb950;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#3fb950;margin-bottom:6px;">🎯 真のアジャイル</div>
+        <div style="font-size:12px;color:#c9d1d9;line-height:1.7;">早く進むためではなく、<strong>早く価値を届ける</strong>ことにコミット。ゴールと失敗の定義を明確にし、追跡可能な振り返りから学び続ける。</div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#58a6ff;margin-bottom:6px;">📐 Single Source of Truth</div>
+        <div style="font-size:12px;color:#c9d1d9;line-height:1.7;">あらゆる定義を一箇所に集約し、<strong>そこから自動生成</strong>。重複を排除し、不整合を構造的に防ぐ。</div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#bc8cff;margin-bottom:6px;">🤝 AI とヒトの協働</div>
+        <div style="font-size:12px;color:#c9d1d9;line-height:1.7;">仕様・設計・コンテキストを同じ情報源に集約し、<strong>AI エージェントと開発者が同じ判断基準で協働</strong>できる状態を維持。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-title">総評 — 目指したものに対して何が起きたか</div>
 <div class="grid grid-1">
   <div class="card" style="border-left:4px solid #58a6ff;">
-    <h2 style="font-size:15px;">1.3 PR/日 × 6ヶ月 = 従来開発の 10〜50倍の速度</h2>
+    <h2 style="font-size:15px;">230+ PR / 6ヶ月 / 1人 — SDD × TDD × AI 協働の統合効果</h2>
     <div style="font-size:13px;color:#c9d1d9;line-height:1.75;">
-      中央値サイクルタイム <strong style="color:#58a6ff;">0.5時間</strong>、設計→実装完了 <strong style="color:#58a6ff;">2.1時間</strong>（92%当日）。
-      従来の人手開発（中央値1〜3日、月5〜20 PR）と比べて桁違いの速度。
-      しかも品質低下の痕跡（revert 連鎖、hotfix 爆発、review 差戻しループ）が最小限——
-      <strong>「AI を使って2倍」ではなく、「AI を前提に開発プロセスそのものを再設計した」</strong> 結果と読める。
+      中央値 PR サイクルタイム <strong style="color:#58a6ff;">0.5時間</strong>、設計→実装完了 <strong style="color:#58a6ff;">2.1時間</strong>（92%当日）。
+      README が掲げる3本柱（真のアジャイル／SSoT／AI 協働）は、
+      <strong>OpenSpec（SDD）＋ TDD ＋ スキーマファースト</strong> という実装選択によって具体化されている。
+      仕様→テスト→実装が1つの SSoT で繋がるため、AI が自律的に書き切れる粒度まで設計が解像されており、
+      その結果が「設計から実装完了まで2時間」という数値に表れている。
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;">
       <div class="insight" style="border-left-color:#3fb950;">
-        <strong>🚀 量産フェーズ</strong><br>
-        12〜1月に機能実装がピーク。ログ機能・管理画面など業務機能が短期で揃った時期。
+        <strong>🚀 早く価値を届ける（= 真のアジャイル）</strong><br>
+        PR の半数以上が1時間以内マージ・92% が当日完了。小さく速く届けるサイクルが安定稼働している。
       </div>
-      <div class="insight" style="border-left-color:#f0c142;">
-        <strong>🔧 メタ投資フェーズ</strong><br>
-        2月に OpenSpec 移行・CI・docs など「プロセス自体」へ3割超を投資。量産で止まらず仕組みに戻っている。
+      <div class="insight" style="border-left-color:#58a6ff;">
+        <strong>📐 SSoT が機能している</strong><br>
+        OpenSpec 仕様 → 型・テスト・実装まで1本の流れ。ドキュメント PR の即マージ（17/20件 30分以内）はその信頼の現れ。
       </div>
       <div class="insight" style="border-left-color:#bc8cff;">
-        <strong>🎯 品質フェーズ</strong><br>
-        4月は Sentry・Docker・deps など品質基盤の再整備が増加。リファクタ比率も月を追って上昇傾向。
+        <strong>🤝 AI 協働の副産物</strong><br>
+        1月に refactor 最多、2月にプロセス刷新、4月に品質再投資。負債を溜めず、基盤に戻る余裕が生まれている。
       </div>
     </div>
   </div>
@@ -188,6 +209,27 @@
       <div style="margin-bottom:10px;"><strong>1月に refactor が最多</strong><br><span style="color:#8b949e;">個人開発だと「動いているコードは触らない」バイアスが働くが、負債を溜めずに清算するサイクルが成立している。AI がコスト意識を下げた効果。</span></div>
       <div style="margin-bottom:10px;"><strong>ドキュメント PR が即マージ</strong><br><span style="color:#8b949e;">17/20件が30分以内。CI が通れば即反映する信頼ベースのフロー＝自動化への投資回収期。</span></div>
       <div><strong>再現可能な開発プロセス</strong><br><span style="color:#8b949e;">OpenSpec + skills 整備により、単なる速度改善ではなく「同じ速度で動き続けられる仕組み」を構築中。</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="section-title">指標の定義</div>
+<div class="grid grid-2">
+  <div class="card">
+    <h2>計測指標</h2>
+    <div style="font-size:12px;color:#c9d1d9;line-height:1.9;">
+      <div style="margin-bottom:8px;"><strong style="color:#58a6ff;">PR サイクルタイム</strong><br><span style="color:#8b949e;">= merged_at − created_at（PR が open されてから merge されるまで）。ソースコードが書かれ PR として提出された後の時間のみを含み、実装前の設計・調査時間は含まない。本来の「リードタイム」（アイデア→本番デプロイ）とは異なる。</span></div>
+      <div style="margin-bottom:8px;"><strong style="color:#58a6ff;">設計→実装完了</strong><br><span style="color:#8b949e;">= archive コミット時刻 − artifacts 作成コミット時刻。OpenSpec の <code>docs(openspec): add ... artifacts</code> から <code>chore(openspec): archive ...</code> までの git コミットタイムスタンプ差分。設計ドキュメント作成から実装完了（archive）までを含む。</span></div>
+      <div><strong style="color:#58a6ff;">週次 PR 数</strong><br><span style="color:#8b949e;">ISO week 単位でその週に merge された PR 数。祝日・休暇で谷ができる週がある。</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>データソース & 範囲</h2>
+    <div style="font-size:12px;color:#c9d1d9;line-height:1.9;">
+      <div style="margin-bottom:8px;"><strong style="color:#58a6ff;">データソース</strong><br><span style="color:#8b949e;">GitHub REST API（PR 一覧）＋ git log（openspec/changes ディレクトリのコミット履歴）。</span></div>
+      <div style="margin-bottom:8px;"><strong style="color:#58a6ff;">対象 PR</strong><br><span style="color:#8b949e;">メイン開発者（solo dev）が作成し merged 状態の PR のみ（計230+ 件）。Copilot bot PR や外部レビュアー PR は対象外。</span></div>
+      <div style="margin-bottom:8px;"><strong style="color:#58a6ff;">設計→実装の母集団</strong><br><span style="color:#8b949e;">OpenSpec 導入後（2026-02-15 以降）に個別の artifacts 作成コミットと archive コミットのペアが特定できた 15 件のみ。それ以前の 33 件は cc-sdd から一括移行されたため計測不能。</span></div>
+      <div><strong style="color:#58a6ff;">注意: 比較値について</strong><br><span style="color:#8b949e;">本ダッシュボードは<strong>プロジェクト内部の絶対値推移</strong>を示すもの。業界ベンチマーク（DORA metrics 等）との直接比較は行っていない。README の3本柱に対する達成度評価として読む想定。</span></div>
     </div>
   </div>
 </div>
