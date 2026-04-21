@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>naokit-dev / Dashboards</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0d1117; color: #e6edf3;
+    min-height: 100vh; padding: 48px 24px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .container { max-width: 720px; width: 100%; }
+  h1 { font-size: 28px; margin-bottom: 8px; }
+  .sub { color: #8b949e; margin-bottom: 40px; font-size: 14px; }
+  .card-list { display: flex; flex-direction: column; gap: 12px; }
+  a.card {
+    background: #161b22; border: 1px solid #21262d;
+    border-radius: 8px; padding: 20px 24px;
+    text-decoration: none; color: #e6edf3;
+    transition: border-color 0.15s, transform 0.15s;
+    display: block;
+  }
+  a.card:hover { border-color: #58a6ff; transform: translateY(-1px); }
+  a.card .title { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: #58a6ff; }
+  a.card .desc { font-size: 13px; color: #8b949e; line-height: 1.5; }
+  footer { margin-top: 48px; color: #4d555e; font-size: 12px; text-align: center; }
+  footer a { color: #8b949e; text-decoration: none; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Dashboards</h1>
+    <div class="sub">Analyses of AI-assisted software development workflows.</div>
+
+    <div class="card-list">
+      <a class="card" href="dashboards/we-wellgo/">
+        <div class="title">AI-Assisted Dev — 6ヶ月・1人開発のアクティビティ分析</div>
+        <div class="desc">ソロフルスタック開発プロジェクトの 230+ PR を分析。PR サイクルタイム、設計→実装完了までの時間、週次バースト傾向、開発フェーズの推移などを可視化。</div>
+      </a>
+    </div>
+
+    <footer>
+      <a href="https://github.com/naokit-dev">github.com/naokit-dev</a>
+    </footer>
+  </div>
+</body>
+</html>
